@@ -18,8 +18,20 @@
                 <div class="has-text-centered">
                     <h1 class="title">Bienvenido al sistema <br></h1>
                     <div class="box has-text-justified">
-                        <h2 class="subtitle">Nombre: <?php echo $_POST["nombre"];?></h2>
-                        <h2 class="subtitle">Correo: <?php echo $_POST["email"];?></h2>
+                    <?php
+                    $nom=$_POST["nombre"];
+                    $mail=$_POST["email"];
+                        if(strlen($nom)>0&&strlen($mail)>0)
+                        {
+                            echo "<h2 class='subtitle'><span class='has-background-light'>Nombre: </span>".$nom."</h2>";
+                            echo "<h2 class='subtitle'><span class='has-background-light'>Email: </span>".$mail."</h2>";
+                        }
+                        else
+                        {
+                            echo "<div class='button is-danger is-fullwidth'>Error en el envío de información</div>";
+                        }
+                    ?>
+                        
                     </div>
                 </div>
             </div>
